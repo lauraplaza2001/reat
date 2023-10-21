@@ -1,0 +1,27 @@
+{
+    "header": {
+        "hello-world" : "Hola mundo"
+    },
+    "mainAppBar": {
+        "r1" : "Página Principal",
+        "r2" : "Productos"
+   },
+   "userMenu" : {
+        "m1" : "Perfil",
+        "m2" : "Cuenta",
+        "m3" : "Cerrar Sesión"
+   },
+   "mainPage": {
+    "welcome" : "Bienvenido a mi App",
+    "description" : "Bienvenido a mi App. En esta aplicación puedes encontrar productos para comprar."
+},
+    "button" : {
+        "mainPage" : "Comenzar"
+    },
+    "tableProducts" : {
+        "c1" : "NOMBRE",
+        "c2" : "PRECIO",
+        "c3": "CATEGORÍA",
+        "c4": "DESCRIPCIÓN"
+    }
+}

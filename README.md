@@ -1,5 +1,12 @@
-# Getting Started with Create React App
+##Llamadas en la API a Fake Store API : 
+https://fakestoreapi.com/docs
+ Se hace un get a : https://fakestoreapi.com/products
 
+
+
+
+
+# Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
