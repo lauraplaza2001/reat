@@ -9,10 +9,11 @@ import { useNavigate } from 'react-router-dom';
 import {useTranslation} from "react-i18next"
 
 
+
 const Main = ({usuario}) => {
     const navigate = useNavigate();
     const [t,i18n] = useTranslation("global") // t es el texto traducido y i18n nos permite generar botones para cambiar el lenguaje. hay que paarle el nombr del fichero dond estan las truaduciones
-
+    
 
 
     return(
