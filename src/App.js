@@ -22,16 +22,17 @@ function App() {
   return (
     <div>
 
-      <MainAppBar/>
+
 
       <ProductContextProvider>
       <BrowserRouter>
+       <MainAppBar/>
+       <Header/>
           <Routes>
               <Route path="" element={<Main/>}></Route>
               <Route path="/products" element={<Products/>}></Route>
           </Routes>
       </BrowserRouter>
-      <Header/>
       </ProductContextProvider>
 
       </div>

@@ -15,20 +15,22 @@ import AdbIcon from '@mui/icons-material/Adb';
 import {useTranslation} from "react-i18next"
 import i18next from 'i18next'
 import { useNavigate } from 'react-router-dom';
+import Link from '@mui/material/Link';
 
 
 
 
 
 
-function MainAppBar() {
+const MainAppBar = () => {
   const [t,i18n] = useTranslation("global") // t es el texto traducido y i18n nos permite generar botones para cambiar el lenguaje. hay que paarle el nombr del fichero dond estan las truaduciones
-
+  const navigate = useNavigate();
   const pages = [t("mainAppBar.r1"), t("mainAppBar.r2")];
   const settings = [t("userMenu.m1"), t("userMenu.m2"), t("userMenu.m3")];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+ 
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -99,9 +101,15 @@ function MainAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+
+                  <Typography textAlign="center" onClick={() => navigate("/products")}  >{page}</Typography>
                 </MenuItem>
               ))}
+
+
+
+
+              
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -123,11 +131,12 @@ function MainAppBar() {
           >
             APP
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => navigate(index === 0 ? '/' : '/products')}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
