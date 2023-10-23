@@ -7,6 +7,8 @@ import Main from './pages/Main';
 import Products from './pages/Products';
 import { useState, createContext, useContext } from "react";
 import axios from 'axios';
+import ProductContextProvider from './contexts/ProductsContextProvider';
+
 
 
 
@@ -22,7 +24,7 @@ function App() {
 
       <MainAppBar/>
 
-
+      <ProductContextProvider>
       <BrowserRouter>
           <Routes>
               <Route path="" element={<Main/>}></Route>
@@ -30,7 +32,7 @@ function App() {
           </Routes>
       </BrowserRouter>
       <Header/>
-
+      </ProductContextProvider>
 
       </div>
   );

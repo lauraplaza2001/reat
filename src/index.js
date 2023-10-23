@@ -24,37 +24,13 @@ i18next.init({
 })
 
 
-const ProductsContext = createContext();
-
-
-function DatosAPI() {
-  const [products,setProducts]= useState([])
-  const getProducts = async () => {
-    const ej = await axios.get("https://fakestoreapi.com/products")
-    setProducts(ej.data);
-    console.log(products);
-  
-  }
-
-
-  return(
-    <ProductsContext.Provider value={products}>
-
-
-    </ProductsContext.Provider>
-  )
-
-}
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <React.StrictMode>
-   <DatosAPI>
     <I18nextProvider i18n={i18next}>
     <App />
     </I18nextProvider>
-    </DatosAPI>
   </React.StrictMode>
 );
 

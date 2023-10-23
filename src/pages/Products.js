@@ -14,33 +14,15 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import {useTranslation} from "react-i18next"
 import { useState, createContext, useContext } from "react";
+import { ProductsContext } from '../contexts/ProductsContextProvider';
 
 
 const Products = ({ user}) => {
 
-
-
-    const [products,setProducts] = useState([])
+   const products = useContext(ProductsContext);
+   console.log(ProductsContext)
     const navigate = useNavigate();
     const [t,i18n] = useTranslation("global") // t es el texto traducido y i18n nos permite generar botones para cambiar el lenguaje. hay que paarle el nombr del fichero dond estan las truaduciones
-
-
-
-      const getProducts = async () => {
-        const ej = await axios.get("https://fakestoreapi.com/products")
-        setProducts(ej.data);
-
-
-        console.log(products);
-   
-    }
-    
-
-  useEffect(() => {
-    getProducts()
-     }, []);
-
-
 
 
 return(
