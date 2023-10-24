@@ -4,12 +4,12 @@
     },
     "mainAppBar": {
         "r1" : "Página Principal",
-        "r2" : "Productos"
+        "r2" : "Productos",
+        "r3" : "Sólo usuario"
    },
    "userMenu" : {
-        "m1" : "Perfil",
-        "m2" : "Cuenta",
-        "m3" : "Cerrar Sesión"
+        "m1" : "Iniciar Sesión"
+
    },
    "mainPage": {
     "welcome" : "Bienvenido a mi App",
@@ -23,5 +23,9 @@
         "c2" : "PRECIO",
         "c3": "CATEGORÍA",
         "c4": "DESCRIPCIÓN"
+    },
+    "form" : {
+        "email" : "Email",
+        "password": "Contraseña"
     }
 }

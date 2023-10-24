@@ -15,18 +15,20 @@ import AdbIcon from '@mui/icons-material/Adb';
 import {useTranslation} from "react-i18next"
 import i18next from 'i18next'
 import { useNavigate } from 'react-router-dom';
-import Link from '@mui/material/Link';
-
-
-
-
+import { useAuth } from '../contexts/AuthContext';
+import {AiOutlineLogin} from 'react-icons/ai'
+ 
 
 
 const MainAppBar = () => {
   const [t,i18n] = useTranslation("global") // t es el texto traducido y i18n nos permite generar botones para cambiar el lenguaje. hay que paarle el nombr del fichero dond estan las truaduciones
   const navigate = useNavigate();
   const pages = [t("mainAppBar.r1"), t("mainAppBar.r2")];
-  const settings = [t("userMenu.m1"), t("userMenu.m2"), t("userMenu.m3")];
+  const { isAuthenticated } = useAuth();
+  if (isAuthenticated) {
+    pages.push(t("mainAppBar.r3"));
+  }
+  const settings = [t("userMenu.m1")];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -45,6 +47,16 @@ const MainAppBar = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const handleRoute = (index) => {
+    if (index === 0) {
+      navigate('/');
+    } else if (index === 1) {
+      navigate('/products');
+    } else if (index === 2) {
+      navigate('/onlyUser');
+    }
   };
 
   return (
@@ -136,7 +148,7 @@ const MainAppBar = () => {
             {pages.map((page, index) => (
               <Button
                 key={page}
-                onClick={() => navigate(index === 0 ? '/' : '/products')}
+                onClick={() => handleRoute(index)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
@@ -145,11 +157,16 @@ const MainAppBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Menu">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+          <Tooltip title="Menu">
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              {isAuthenticated ? (
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
+              ) : (
+                <AiOutlineLogin />
+              )}
+            </IconButton>
+          </Tooltip>
+
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -166,9 +183,9 @@ const MainAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
+              {settings.map((setting,index) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography  onClick={() => navigate(index === 0 ? '/logIn' : '/')} textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>

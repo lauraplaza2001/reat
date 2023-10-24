@@ -4,12 +4,12 @@
     },
     "mainAppBar": {
          "r1" : "Homepage",
-         "r2" : "Products"
+         "r2" : "Products",
+         "r3" : "Only users"
     },
     "userMenu" : {
-         "m1" : "Profile",
-         "m2" : "Account",
-         "m3" : "Logout"
+         "m1" : "Log In"
+
     },
     "mainPage": {
         "welcome" : "Welcome to my app",
@@ -23,5 +23,9 @@
         "c2" : "PRICE",
         "c3": "CATEGORY",
         "c4": "DESCRIPTION"
+    },
+    "form" : {
+        "email" : "Email",
+        "password": "Password"
     }
 }

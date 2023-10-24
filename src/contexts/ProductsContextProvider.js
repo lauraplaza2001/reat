@@ -18,7 +18,7 @@ const ProductContextProvider = ({ children }) => {
 
   useEffect(() => {
     getProducts();
-  }, []); // El segundo argumento vacío significa que esto se ejecuta solo una vez al montar el componente.
+  }, []); 
 
   return (
     <ProductsContext.Provider value={products}>

@@ -13,11 +13,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import {useTranslation} from "react-i18next"
-import { useState, createContext, useContext } from "react";
+import { useContext } from "react";
 import { ProductsContext } from '../contexts/ProductsContextProvider';
 
 
-const Products = ({ user}) => {
+const Products = () => {
 
    const products = useContext(ProductsContext);
    console.log(ProductsContext)
