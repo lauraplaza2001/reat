@@ -1,10 +1,8 @@
-import { Button, TextField } from '@mui/material';
+
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Container } from "@mui/system";
-import axios from 'axios';
-import React, { useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -21,8 +19,7 @@ const Products = () => {
 
    const products = useContext(ProductsContext);
    console.log(ProductsContext)
-    const navigate = useNavigate();
-    const [t,i18n] = useTranslation("global") // t es el texto traducido y i18n nos permite generar botones para cambiar el lenguaje. hay que paarle el nombr del fichero dond estan las truaduciones
+    const [t] = useTranslation("global") // t es el texto traducido y i18n nos permite generar botones para cambiar el lenguaje. hay que paarle el nombr del fichero dond estan las truaduciones
 
 
 return(

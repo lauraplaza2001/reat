@@ -1,10 +1,12 @@
 
+import {useTranslation} from "react-i18next"
 const OnlyUser = () => {
+    const [t,i18n] = useTranslation("global")
 
 
     return(
         <div>
-            Acceso sólo para usuarios 
+             { t("onlyUser.text")}
         </div>
     )
 }

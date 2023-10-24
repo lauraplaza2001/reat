@@ -27,5 +27,8 @@
     "form" : {
         "email" : "Email",
         "password": "Contraseña"
+    },
+    "onlyUser" : {
+        "text" : "Acceso para usuarios"
     }
 }
