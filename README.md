@@ -3,12 +3,14 @@
 ##  Para empezar : clonar repo
 
 git clone https://github.com/lauraplaza2001/reat
+
+
 cd reat
 
 ## Instalar paquetes:
 npm install
 
-##Iniciar :
+## Iniciar :
 npm start
 
 
